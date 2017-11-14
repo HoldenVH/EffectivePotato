@@ -1,0 +1,9 @@
+[submodule "example/cleverbot"]
+	path = example/cleverbot
+	url = git@github.com:mcheng3/13_rest_sd.git
+[submodule "example/tone_analyzer"]
+	path = example/tone_analyzer
+	url = git@github.com:sfomina/api_rest.git
+[submodule "example/text_to_speech"]
+	path = example/text_to_speech
+	url = git@github.com:tchen9/13_rest.git
