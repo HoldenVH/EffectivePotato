@@ -7,7 +7,7 @@
     {% if r %}
     HELLO<br>
     <audio controls>
-      <source src="audio/resp.wav" type="audio/wav">
+      <source src="{{ url_for('static', filename='resp.wav') }}" type="audio/wav">
     </audio>
     {% endif %}
   </body>

@@ -16,18 +16,13 @@ def root():
     r = requests.get( apiurl, auth=(username,password),
                       params=dictionary)
     #print r.content
-    with open("audio/resp.wav", "wb") as f:
+    with open("static/resp.wav", "wb") as f:
         f.write(r.content)
         f.close()
     statuscode = r.ok
     print statuscode
     return render_template('template.html', text=request.args.get("text"),
                            r=statuscode)
-
-@app.route("/audio/resp.wav")
-def audio():
-    return send_from_directory("/audio", "resp.wav")
-
 
 if __name__ == '__main__':
     app.debug = True
