@@ -3,12 +3,10 @@
   <body>
     Hello there!<br>
     You entered "{{text}}"<br>
-    Audio: TO BE IMPLEMENTED {{r}}<br>
     {% if r %}
-    HELLO<br>
-    <audio controls>
-      <source src="{{ url_for('static', filename='resp.wav') }}" type="audio/wav">
-    </audio>
+    Everything went alright!
+    {% else %}
+    Ooops! Something went wrong!
     {% endif %}
   </body>
 </html>
