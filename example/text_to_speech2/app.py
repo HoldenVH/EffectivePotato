@@ -12,14 +12,21 @@ def root():
     password = "Idq1K6PcNKRs"
     apiurl = "https://stream.watsonplatform.net/text-to-speech/api/v1/synthesize"
     headers = {"content-type": "application/json", "Accept": "audio/wav" }
-    dict = {"text": request.args.get("text")}
-    text = urllib.urlencode(dict)
-    r = requests.get( apiurl, auth=(username,password))
-    print r.url
-    print r.headers
+    dictionary = {"text": request.args.get("text")}
+    r = requests.get( apiurl, auth=(username,password),
+                      params=dictionary)
+    #print r.content
+    with open("audio/resp.wav", "wb") as f:
+        f.write(r.content)
+        f.close()
+    statuscode = r.ok
+    print statuscode
     return render_template('template.html', text=request.args.get("text"),
-                           r=r)
+                           r=statuscode)
 
+@app.route("/audio/resp.wav")
+def audio():
+    return send_from_directory("/audio", "resp.wav")
 
 
 if __name__ == '__main__':

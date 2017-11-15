@@ -3,6 +3,12 @@
   <body>
     Hello there!<br>
     You entered "{{text}}"<br>
-    Audio: TO BE IMPLEMENTED {{r}}
+    Audio: TO BE IMPLEMENTED {{r}}<br>
+    {% if r %}
+    HELLO<br>
+    <audio controls>
+      <source src="audio/resp.wav" type="audio/wav">
+    </audio>
+    {% endif %}
   </body>
 </html>
