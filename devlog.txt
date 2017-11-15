@@ -1,6 +1,19 @@
+Team EffectivePotato -- Holden Higgins, Vivien Lee, Shaina Peters, Arif Roktim 
+ ______   ______   __   __   __       ______   _______     
+/_____/\ /_____/\ /_/\ /_/\ /_/\     /_____/\ /______/\    
+\:::_ \ \\::::_\/_\:\ \\ \ \\:\ \    \:::_ \ \\::::__\/__  
+ \:\ \ \ \\:\/___/\\:\ \\ \ \\:\ \    \:\ \ \ \\:\ /____/\ 
+  \:\ \ \ \\::___\/_\:\_/.:\ \\:\ \____\:\ \ \ \\:\\_  _\/ 
+   \:\/.:| |\:\____/\\ ..::/ / \:\/___/\\:\_\ \ \\:\_\ \ \ 
+    \____/_/ \_____\/ \___/_(   \_____\/ \_____\/ \_____\/ 
+
+
 firstL -- TIMESTAMP\n
 <all the wonderful things and the not so wonderful bugs you discovered>
 
 holdenH -- 2017-11-14 12:43
 In the beginning PM created the repo and the README.txt. Now the repo was formless and empty, darkness was over the surface of the deep, and the spirit of PM was hovering over the file.
 Amd PM said "let there be devlog.txt," and there was devlog.txt. PM saw that the devlog.txt was good, and he made an entry.
+
+arifR 2017-11-14 20:44
+Tested tone analyzer stuff.
