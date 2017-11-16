@@ -17,3 +17,6 @@ Amd PM said "let there be devlog.txt," and there was devlog.txt. PM saw that the
 
 arifR 2017-11-14 20:44
 Tested tone analyzer stuff.
+
+leeV 2017-11-16 17:33
+Added Bootstrap template + CSS + JS files.
