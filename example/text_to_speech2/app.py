@@ -2,6 +2,7 @@ from flask import Flask, render_template, request
 import urllib2, json, urllib
 import requests
 import shutil
+import os
 
 app = Flask(__name__)
 
@@ -16,7 +17,9 @@ def root():
     dictionary = {"text": request.args.get("text")}
     r = requests.get( apiurl, auth=(username,password), stream=True,
                       params=dictionary)
-    with open('audio.wav', 'wb') as f:
+    download = os.path.expanduser("~/Downloads/")
+    download += "audio.wav"
+    with open(download, 'wb') as f:
         f.write(r.content)
     #print r.content
     #filename = "static/resp.wav"
