@@ -10,8 +10,8 @@ app = Flask(__name__)
 def root():
     if request.args.get("text") is None:
         return render_template("form.html")
-    username = "60365d33-5378-4194-8fb3-2a5f1b88deb0"
-    password = "Idq1K6PcNKRs"
+    username = "3f174c47-4e0a-483c-9526-20c5afe6a303"
+    password = "lkfmA6YYNBzP"
     apiurl = "https://stream.watsonplatform.net/text-to-speech/api/v1/synthesize"
     headers = {"content-type": "application/json", "Accept": "audio/wav", "content-disposition": "attachment; filename=\"resp.wav\""}
     dictionary = {"text": request.args.get("text")}
