@@ -13,13 +13,18 @@ def root():
     username = "3f174c47-4e0a-483c-9526-20c5afe6a303"
     password = "lkfmA6YYNBzP"
     apiurl = "https://stream.watsonplatform.net/text-to-speech/api/v1/synthesize"
-    headers = {"content-type": "application/json", "Accept": "audio/wav", "content-disposition": "attachment; filename=\"resp.wav\""}
+    headers = {"content-type": "application/json", "Accept": "audio/wav",
+               "Content-Disposition": "attachment;filename=audio.wav"}
     dictionary = {"text": request.args.get("text")}
     r = requests.get( apiurl, auth=(username,password), stream=True,
                       params=dictionary)
-    download = os.path.expanduser("~/Downloads/")
-    download += "audio.wav"
-    with open(download, 'wb') as f:
+    try:
+        os.remove("static/audio.wav")
+        print "Deleted file"
+    except:
+        print "File doesn't exist"
+    filename = "static/audio.wav"
+    with open(filename, 'wb') as f:
         f.write(r.content)
     #print r.content
     #filename = "static/resp.wav"
@@ -27,10 +32,8 @@ def root():
     #    f.write(r.content)
     #    f.close()
 
-    statuscode = r.ok
-    print statuscode
     return render_template('template.html', text=request.args.get("text"),
-                           r=statuscode)
+                           status=r.ok)
 
 if __name__ == '__main__':
     app.debug = True
