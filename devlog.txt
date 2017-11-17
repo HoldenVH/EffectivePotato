@@ -11,7 +11,7 @@ Team EffectivePotato -- Holden Higgins, Vivien Lee, Shaina Peters, Arif Roktim
 firstL -- TIMESTAMP\n
 <all the wonderful things and the not so wonderful bugs you discovered>
 
-holdenH -- 2017-11-14 12:43
+holdenH -- 2017-11-14 0:43
 In the beginning PM created the repo and the README.txt. Now the repo was formless and empty, darkness was over the surface of the deep, and the spirit of PM was hovering over the file.
 Amd PM said "let there be devlog.txt," and there was devlog.txt. PM saw that the devlog.txt was good, and he made an entry.
 
@@ -20,3 +20,6 @@ Tested tone analyzer stuff.
 
 leeV 2017-11-16 17:33
 Added Bootstrap template + CSS + JS files.
+
+holdenH 2017-11-17 0:38
+For We know the design.pdf We have for the project, a design.pdf to prosper the project and not to harm the project, a design.pdf to give the project hope and a future.
