@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    Hello there!<br>
+    You entered "{{text}}"<br>
+    {% if status %}
+    Everything went alright! <br>
+    <a href="{{ url_for('static', filename='audio.wav') }}" download>Link</a>
+    {% else %}
+    Ooops! Something went wrong!
+    {% endif %}
+  </body>
+</html>
