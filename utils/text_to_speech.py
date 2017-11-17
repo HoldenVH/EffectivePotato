@@ -7,8 +7,12 @@ def text_to_speech(text, username, password):
     headers = {"content-type": "application/json", "Accept": "audio/wav",
                "Content-Disposition": "attachment;filename=audio.wav"}
     dictionary = {"text": text}
-    r = requests.get(apiurl, auth=(username, password), stream=True,
+    try:
+        r = requests.get(apiurl, auth=(username, password), stream=True,
                      params=dictionary)
+    except Exception as e:
+        print e
+        return False
     filename = "static/audio.wav"
     try:
         os.remove(filename)
