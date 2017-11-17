@@ -23,6 +23,5 @@ def text_to_speech(text, username, password):
             print "File doesn't exist"
     with open(filename, 'wb') as f:
         f.write(r.content)
-    if __name__ == "__main__":
-        print r
+    print r
     return r.ok

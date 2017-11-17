@@ -1,5 +1,8 @@
 import os
 from utils import text_to_speech
+from flask import Flask, render_template, request
+
+app = Flask(__name__)
 
 def read_credentials(filename):
     try:
@@ -13,9 +16,21 @@ def read_credentials(filename):
         return -1
 
 
-if __name__ == "__main__":
+@app.route("/")
+def root():
+    return "Hi there!"
+
+@app.route("/test")
+def test():
+    if request.args.get("text") is None:
+        return render_template("test_form.html")
     tts = read_credentials("text_to_speech")
     print tts
-    status = text_to_speech.text_to_speech("hello jeffrey", tts[0], tts[1])
+    status = text_to_speech.text_to_speech(request.args["text"], tts[0], tts[1])
     print status
+    return render_template("test.html", text=request.args["text"],
+                           status=status)
 
+if __name__ == "__main__":
+    app.debug = True
+    app.run()
