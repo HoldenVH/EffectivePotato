@@ -18,8 +18,14 @@ Amd PM said "let there be devlog.txt," and there was devlog.txt. PM saw that the
 arifR 2017-11-14 20:44
 Tested tone analyzer stuff.
 
-leeV 2017-11-16 17:33
+arifR 2017-11-15 20:00
+Tested text to speech capabilities.
+
+vivienL 2017-11-16 17:33
 Added Bootstrap template + CSS + JS files.
 
-holdenH 2017-11-17 0:38
+holdenH 2017-11-17 00:38
 For We know the design.pdf We have for the project, a design.pdf to prosper the project and not to harm the project, a design.pdf to give the project hope and a future.
+
+arifR 2017-11-17 01:08
+Start work on main python file and refactoring text to speech code.
