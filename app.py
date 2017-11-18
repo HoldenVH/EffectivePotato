@@ -13,7 +13,8 @@ def read_credentials(filename):
         return creds
     except Exception as e:
         print e
-        return -1
+        print "============Credentials invalid=============="
+        return [-1, -1]
 
 
 @app.route("/")
@@ -22,11 +23,14 @@ def root():
 
 @app.route("/test")
 def test():
+    creds = {}
     if request.args.get("text") is None:
         return render_template("test_form.html")
-    tts = read_credentials("text_to_speech")
-    print tts
-    status = tts.text_to_speech(request.args["text"], tts[0], tts[1])
+    creds['tts'] = read_credentials("text_to_speech")
+    if creds['tts'][0] == -1:
+        return render_template("bad_cred.html", api="Text to speech")
+    print creds['tts']
+    status = tts.text_to_speech(request.args["text"], creds['tts'][0], creds['tts'][1])
     print status
     return render_template("test.html", text=request.args["text"],
                            status=status)
