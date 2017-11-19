@@ -3,11 +3,16 @@
   <body>
     Hello there!<br>
     You entered "{{text}}"<br>
-    {% if status %}
-    Everything went alright! <br>
+    {% if tts_status %}
+    Everything with tts went alright! <br>
     <a href="{{ url_for('static', filename='audio.wav') }}" download>Link</a>
     {% else %}
-    Ooops! Something went wrong!
+    Ooops! Something with tts went wrong!
+    {% endif %}
+    {% if ta_status %}
+    <pre>{{ta_ret}}</pre>
+    {% else %}
+    Ooops! Something with ta went wrong!
     {% endif %}
   </body>
 </html>

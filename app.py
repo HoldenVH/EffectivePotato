@@ -1,5 +1,6 @@
 import os
-from utils import tts
+import json
+from utils import tts, ta
 from flask import Flask, render_template, request
 
 app = Flask(__name__)
@@ -23,17 +24,27 @@ def root():
 
 @app.route("/test")
 def test():
-    creds = {}
     if request.args.get("text") is None:
         return render_template("test_form.html")
+    # ========Read credentials========
+    creds = {}
     creds['tts'] = read_credentials("text_to_speech")
-    if creds['tts'][0] == -1:
-        return render_template("bad_cred.html", api="Text to speech")
-    print creds['tts']
-    status = tts.text_to_speech(request.args["text"], creds['tts'][0], creds['tts'][1])
-    print status
+    creds['ta'] = read_credentials("tone_analyzer")
+
+    # Check if creds exist
+    for cred in creds:
+        if creds[cred][0] == -1:
+            return render_template("bad_cred.html", api="Text to speech")
+    # ========End reading credentials========
+
+    tts_status = tts.text_to_speech(request.args["text"], creds['tts'][0], creds['tts'][1])
+    print tts_status
+    ta_resp = ta.analyze_tone(request.args["text"], creds['ta'][0], creds['ta'][1])
+    ta_dict = json.loads(ta_resp)
+    ta_ret = ta.pretty_analysis(ta_dict)
     return render_template("test.html", text=request.args["text"],
-                           status=status)
+                           tts_status=tts_status,
+                           ta_status=ta_resp, ta_ret=ta_ret)
 
 if __name__ == "__main__":
     app.debug = True
