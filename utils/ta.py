@@ -16,7 +16,7 @@ def analyze_tone(text, username, password):
 
 
 def pretty_analysis(dictionary):
-    print dictionary
+    #print dictionary
     string = ""
     for tone_cats in dictionary['document_tone']['tone_categories']:
         string += "\n"
