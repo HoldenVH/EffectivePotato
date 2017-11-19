@@ -35,3 +35,6 @@ Finish work on text to speech integration with flask
 
 arifR 2017-11-18 20:08
 Work on tone analyzer and text to speech integration.
+
+arifR 2017-11-19 14:35
+Work on tone analyzer and text to speech integration.
