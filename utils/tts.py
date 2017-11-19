@@ -23,6 +23,6 @@ def text_to_speech(text, username, password):
             print "File doesn't exist"
     with open(filename, 'wb') as f:
         f.write(r.content)
-    print r
-    print r.headers
+    print "TTS Response Code: ", r
+    #print r.headers
     return r.ok
