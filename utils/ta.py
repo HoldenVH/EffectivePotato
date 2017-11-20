@@ -15,6 +15,21 @@ def analyze_tone(text, username, password):
         return False
 
 
+def tagify_data(in_text, emotions):
+    text = ""
+    text += "<speak>"
+    if "joy" in emotions:
+        text += '<express-as type="GoodNews">'
+
+    text += in_text
+
+    if "joy" in emotions:
+        text += "</express-as>"
+
+    text += "</speak>"
+    print "TEXT: ", text
+    return text
+
 # 0: emotion_tone
 #        0: Anger
 #        1: Disgust

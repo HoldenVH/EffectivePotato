@@ -49,17 +49,7 @@ def test():
     #print ta_dict
     emotions = ta.listify_data(ta_dict)
     print "Emotions: ", emotions
-    ta_in = "<speak>"
-
-    # check if joy is up
-    if "joy" in emotions:
-        ta_in += '<express-as type="GoodNews">'
-        ta_in += request.args["text"]
-        ta_in += "</express-as>"
-    else:
-        ta_in += request.args["text"]
-
-    ta_in += "</speak>"
+    ta_in = ta.tagify_data(request.args["text"], emotions)
 
     # ==== Text to speech ====
     tts_status = tts.text_to_speech(ta_in, creds['tts'][0], creds['tts'][1])
