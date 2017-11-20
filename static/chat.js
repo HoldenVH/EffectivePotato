@@ -1,8 +1,10 @@
 var me = {};
-me.avatar = "https://lh6.googleusercontent.com/-lr2nyjhhjXw/AAAAAAAAAAI/AAAAAAAARmE/MdtfUmC0M4s/photo.jpg?sz=48";
+//me.avatar = "https://lh6.googleusercontent.com/-lr2nyjhhjXw/AAAAAAAAAAI/AAAAAAAARmE/MdtfUmC0M4s/photo.jpg?sz=48";
+me.avatar = "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/220px-User_icon_2.svg.png"
+
 
 var you = {};
-you.avatar = "https://a11.t26.net/taringa/avatares/9/1/2/F/7/8/Demon_King1/48x48_5C5.jpg";
+you.avatar = "http://www.cleverbot.com/images/cleverbot226x94.jpg";
 
 function formatAMPM(date) {
     var hours = date.getHours();
@@ -85,7 +87,20 @@ $( document ).ready(function() {
             if (text !== ""){
                 insertChat("me", text);
                 $(this).val('');
+                var ret = cleverbot(text);
+                console.log(ret);
+                insertChat("cleverbot", ret, 0);
             }
         }
+
     });
+    function cleverbot(i) {
+    var aj = $.ajax({
+            type: "POST",
+            url: "/clever",
+            async: false,
+            data: { input: i }
+        });
+        return aj.responseText;
+}
 });

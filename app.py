@@ -1,9 +1,14 @@
 import os
 import json
-from utils import tts, ta
-from flask import Flask, render_template, request, jsonify
+from utils import tts, ta, cleverbot
+from flask import Flask, render_template, request, jsonify, make_response
 
 app = Flask(__name__)
+
+#cs is the variable that logs your old inputs
+#it needs to be stored somewhere
+csstorage = ""
+print "hello there"
 
 def read_credentials(filename):
     try:
@@ -67,6 +72,27 @@ def test():
 @app.route('/chat')
 def chat():
     return render_template('chat.html')
+
+@app.route('/python')
+def python():
+    return "wow this actually worked"
+
+@app.route('/clever', methods=["GET", "POST"])
+def clever():
+    global csstorage
+    inp = request.form['input']
+    cred = read_credentials('cleverbot')[0]
+    #cs = "needs to be implemented"
+    if request.method == "GET":
+        return cred
+    if request.method == "POST":
+        processed = cleverbot.get_url(cred, inp, csstorage)
+        csstorage = processed['cs']
+        return processed['output']
+
+    cred = read_credentials('cleverbot')[0]
+    get_url(key)
+    return cred
 
 if __name__ == "__main__":
     app.debug = True
