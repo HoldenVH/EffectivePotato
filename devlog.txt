@@ -41,3 +41,6 @@ Work on tone analyzer and text to speech integration.
 
 shainaP 2017-11-19 23:46
 Made the front end chat thing start working
+
+shainaP 2017-11-20 1:55
+Added cleverbot chat and the API mostly works except you can't request.
