@@ -1,7 +1,7 @@
 import os
 import json
 from utils import tts, ta
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 
 app = Flask(__name__)
 
@@ -63,6 +63,10 @@ def test():
     return render_template("test.html", text=request.args["text"],
                            tts_status=tts_status,
                            ta_status=ta_resp, ta_ret=ta_ret, ta_in=ta_in)
+
+@app.route('/chat')
+def chat():
+    return render_template('chat.html')
 
 if __name__ == "__main__":
     app.debug = True
