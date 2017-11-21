@@ -89,7 +89,7 @@ $( document ).ready(function() {
                 $(this).val('');
                 var ret = cleverbot(text);
                 console.log(ret);
-                insertChat("cleverbot", ret, 0);
+                insertChat("cleverbot", ret, 100); //You can change cleverbot's delay with this.
             }
         }
 

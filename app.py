@@ -78,7 +78,8 @@ def clever():
     if request.method == "POST":
         processed = cleverbot.get_url(cred, inp, csstorage)
         csstorage = processed['cs']
-        return processed['output']
+        to_display = cleverbot.create_message(processed['output'])
+        return to_display
 
     cred = read_credentials('cleverbot')[0]
     get_url(key)

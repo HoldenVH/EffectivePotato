@@ -1,17 +1,10 @@
 import json
 import requests
+import urllib
 
 
 def get_url(key, inp, cs=""):
-    #info = json.loads(cs)
-    #csstorage = cs
-    #i = inp
     url = "http://www.cleverbot.com/getreply"
-    #url += "?key=" + key
-    #url += "&input=" + i
-    #if csstorage != "":
-    #    url += "&cs=" + csstorage
-    #url += "&callback=ProcessReply"
     if cs == "":
         dictionary = {"key": key, "input": inp}
     else:
@@ -19,10 +12,7 @@ def get_url(key, inp, cs=""):
     req = requests.get(url, params=dictionary)
     print req
     print req.text
-    #par = {'key':key, 'input':i, 'cs':'csstorage','callback':'ProcessReply'}
-    #print par
     req = req.text
-    #print req.url
     rd = json.loads(req)
     csstorage = rd['cs']
     out = rd['output']
@@ -37,3 +27,10 @@ if __name__ == "__main__":
     key = f.readlines()[0].strip()
     resp = get_url(key, "Hi")
     print resp
+
+def create_message(text):
+    href = "/test?text="
+    href += urllib.quote_plus(text)
+    message = "<a href=\""+href+"\" target=\"_blank\">"+text+"</a>"
+    print message
+    return message

@@ -47,3 +47,6 @@ Added cleverbot chat and the API mostly works except you can't request.
 
 arifR 2017-11-20 11:53
 Fix Shaina's code
+
+shainaP 2017-11-20 20:42
+Cleverbot links to audio.
