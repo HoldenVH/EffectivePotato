@@ -82,15 +82,11 @@ def pretty_analysis(dictionary):
     #print dictionary
     string = ""
     for tone_cats in dictionary:
-        string += "\n"
-        string += tone_cats['category_id'] + ": "
-        string += "\n"
         for tone_cat in tone_cats['tones']:
-            for tone in tone_cat:
-                string += "\t\t" + tone + ": "
-                if isinstance(tone_cat[tone], unicode):
-                    string +=  tone_cat[tone]
-                else:
-                    string += str(tone_cat[tone])
+            #print tone_cat
+            string += tone_cat['tone_name']
+            length = len(tone_cat['tone_name'].decode("utf-8"))
+            percent = str( round(tone_cat['score'] * 100, 2) ) + "%"
+            string += percent.rjust(30)[length:]
             string += "\n"
     return string
