@@ -63,7 +63,7 @@ def test():
 def chat():
     return render_template('chat.html')
 
-@app.route('/clever', methods=["GET", "POST"])
+@app.route('/clever', methods=["POST"])
 def clever():
     global csstorage
     inp = request.form['input']
