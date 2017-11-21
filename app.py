@@ -63,10 +63,6 @@ def test():
 def chat():
     return render_template('chat.html')
 
-@app.route('/python')
-def python():
-    return "wow this actually worked"
-
 @app.route('/clever', methods=["GET", "POST"])
 def clever():
     global csstorage
@@ -77,6 +73,8 @@ def clever():
         return cred
     if request.method == "POST":
         processed = cleverbot.get_url(cred, inp, csstorage)
+        if processed == -1:
+            return "Ooops! Cleverbot api is not available!"
         csstorage = processed['cs']
         to_display = cleverbot.create_message(processed['output'])
         return to_display

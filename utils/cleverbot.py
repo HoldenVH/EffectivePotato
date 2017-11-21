@@ -11,6 +11,8 @@ def get_url(key, inp, cs=""):
         dictionary = {"key": key, "input": inp, "cs": cs}
     req = requests.get(url, params=dictionary)
     print req
+    if not req.ok:
+        return -1
     print req.text
     req = req.text
     rd = json.loads(req)
