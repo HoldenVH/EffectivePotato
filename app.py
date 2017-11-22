@@ -8,7 +8,6 @@ app = Flask(__name__)
 #cs is the variable that logs your old inputs
 #it needs to be stored somewhere
 csstorage = ""
-print "hello there"
 
 def read_credentials(filename):
     try:
@@ -23,11 +22,7 @@ def read_credentials(filename):
         return [-1, -1]
 
 
-@app.route("/")
-def root():
-    return "Hi there!"
-
-@app.route("/test")
+@app.route("/tone")
 def test():
     if request.args.get("text") is None:
         return render_template("test_form.html")
@@ -59,7 +54,7 @@ def test():
                            tts_status=tts_status,
                            ta_status=ta_resp, ta_ret=ta_ret, ta_in=ta_in)
 
-@app.route('/chat')
+@app.route('/')
 def chat():
     return render_template('chat.html')
 

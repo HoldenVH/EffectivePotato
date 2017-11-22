@@ -31,7 +31,7 @@ if __name__ == "__main__":
     print resp
 
 def create_message(text):
-    href = "/test?text="
+    href = "/tone?text="
     href += urllib.quote_plus(text)
     message = "<a href=\""+href+"\" target=\"_blank\">"+text+"</a>"
     print message
