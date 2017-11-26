@@ -1,0 +1,18 @@
+body{
+  background: url(../img/bg-pattern.png),#7b4397;
+  background: url(../img/bg-pattern.png),-webkit-linear-gradient(to left,#7b4397,#dc2430);
+  background: url(../img/bg-pattern.png),linear-gradient(to left,#7b4397,#dc2430);
+  font-family: "Arial";
+}
+
+table {
+    border-collapse: collapse;
+    width: 30%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {background: rgba(104, 44, 44, .5); }

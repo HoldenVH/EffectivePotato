@@ -1,5 +1,11 @@
 <!DOCTYPE html>
 <html>
+<head>
+  <link rel="stylesheet" href="static/css/testpg.css">
+  <title>
+    {{text}}
+  </title>
+</head>
   <body>
     Hello there!<br>
     Cleverbot responded "{{text}}"<br>
@@ -8,9 +14,12 @@
     {% else %}
     Ooops! Something with text to speech went wrong! :( <br>
     {% endif %}
+  </br>
     {% if ta_status %}
     Breakdown of emotion detected in response:
     {{ta_ret|safe}}
+  </br>
+    {{ta_in}}
     {% else %}
     Ooops! Something with ta went wrong!
     {% endif %}
