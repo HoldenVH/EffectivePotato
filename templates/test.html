@@ -2,16 +2,15 @@
 <html>
   <body>
     Hello there!<br>
-    You entered "{{text}}"<br>
+    Cleverbot responded "{{text}}"<br>
     {% if tts_status %}
-    Everything with tts went alright! <br>
-    <a href="{{ url_for('static', filename='audio.wav') }}" download>Link</a>
+    <a href="{{ url_for('static', filename='audio.wav') }}" download>Download audio file</a><br>
     {% else %}
-    Ooops! Something with tts went wrong!
+    Ooops! Something with text to speech went wrong! :( <br>
     {% endif %}
     {% if ta_status %}
+    Breakdown of emotion detected in response:
     {{ta_ret|safe}}
-    {{ta_in}}
     {% else %}
     Ooops! Something with ta went wrong!
     {% endif %}
