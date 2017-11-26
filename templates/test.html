@@ -10,8 +10,8 @@
     Ooops! Something with tts went wrong!
     {% endif %}
     {% if ta_status %}
-    <pre>{{ta_ret}}</pre><br><br>
-    <pre>{{ta_in}}</pre>
+    {{ta_ret|safe}}
+    {{ta_in}}
     {% else %}
     Ooops! Something with ta went wrong!
     {% endif %}

@@ -80,13 +80,11 @@ def listify_data(in_list):
 
 def pretty_analysis(dictionary):
     #print dictionary
-    string = ""
+    string = '<table><tr><th>Emotion</th><th>Percent</th></tr>'
     for tone_cats in dictionary:
         for tone_cat in tone_cats['tones']:
             #print tone_cat
-            string += tone_cat['tone_name']
-            length = len(tone_cat['tone_name'].decode("utf-8"))
-            percent = str( round(tone_cat['score'] * 100, 2) ) + "%"
-            string += percent.rjust(30)[length:]
-            string += "\n"
+            string += '<tr><td>' + tone_cat['tone_name'] + '</td>' +\
+                      '<td>' + str(round(tone_cat['score'] * 100, 2)) + '</td></tr>'
+    string += '</table>'
     return string
