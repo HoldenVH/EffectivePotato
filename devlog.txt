@@ -56,3 +56,6 @@ Fix Arif's perceptions (made ajax asynchronous, making js faster)
 
 vivienL 2017-11-26 0:20
 Fixed scrolling issue, adjusted avatar width. Stylistic changes to main template.
+
+shainaP 2017-11-26 0:50
+Fixed the issue where sending a message would not put the message at the bottom of the screen.
