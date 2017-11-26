@@ -62,3 +62,6 @@ Fixed the issue where sending a message would not put the message at the bottom 
 
 vivienL 2017-11-26 14:04
 Stylistic changes to test template.
+
+arifR 2017-11-25 23:00
+Make improvements to templates
