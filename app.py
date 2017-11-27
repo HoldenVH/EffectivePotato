@@ -44,7 +44,9 @@ def test():
     #print ta_dict
     emotions = ta.listify_data(ta_dict)
     print "Emotions: ", emotions
-    ta_in = ta.tagify_data(request.args["text"], emotions)
+    ta_taggified_data = ta.tagify_data(request.args["text"], emotions)
+    ta_in = ta_taggified_data[0]
+    ta_applied_tags = ta_taggified_data[1]
 
     # ==== Text to speech ====
     tts_status = tts.text_to_speech(ta_in, creds['tts'][0], creds['tts'][1])
@@ -52,7 +54,8 @@ def test():
 
     return render_template("test.html", text=request.args["text"],
                            tts_status=tts_status,
-                           ta_status=ta_resp, ta_ret=ta_ret, ta_in=ta_in)
+                           ta_status=ta_resp, ta_ret=ta_ret, ta_in=ta_in,
+                           ta_applied_tags=ta_applied_tags)
 
 @app.route('/')
 def chat():
