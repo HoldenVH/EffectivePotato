@@ -28,4 +28,4 @@ Create file `tone_analyzer`. Add the username to the first line and the password
 
 ### Cleverbot API
 __Insert api key procuring instructions__  
-Create file `cleverbot`. Add the username to the first line and the password to the second line.
+Create file `cleverbot`. Add the API key to the first line.
