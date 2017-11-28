@@ -1,6 +1,12 @@
 # Team EffectivePotato -- Holden Higgins, Vivien Lee, Shaina Peters, Arif Roktim 
 Far better than an ineffective potato
 
+## Overview
+APIs used: Cleverbot, IBM Watson text to speech, IBM Watson tone analyzer
+
+The user inputs what they want to say to Cleverbot, and Cleverbot will return a response to what the user wrote. Cleverbot’s response will then be passed into the Watson text-to-speech API, ultimately allowing the user to download an audio file of Cleverbot’s response in spoken format.
+
+
 ## Dependencies
 You need the requests library  
 First make a virtual environment and activate it. Then install the requests library.  
