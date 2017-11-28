@@ -34,13 +34,13 @@ def tagify_data(in_text, emotions):
 
     text += in_text
 
-    if "joy" in emotions:
+    if "tentative" in emotions:
+        text += "</express-as>"
+    if "sadness" in emotions:
         text += "</express-as>"
     if "extraversion" in emotions:
         text += '</voice-transformation>'
-    if "sadness" in emotions:
-        text += "</express-as>"
-    if "tentative" in emotions:
+    if "joy" in emotions:
         text += "</express-as>"
 
     text += "</speak>"

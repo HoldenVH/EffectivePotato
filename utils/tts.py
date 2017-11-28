@@ -25,4 +25,5 @@ def text_to_speech(text, username, password):
         f.write(r.content)
     print "TTS Response Code: ", r
     #print r.headers
+    print r.status_code
     return r.ok
