@@ -19,14 +19,7 @@
     Breakdown of emotion detected in response:
     {{ta_ret|safe}}
   </br>
-  <!-- {{ta_in}} -->
-  <br>
-  Emotions applied to text to speech synthesis:
-  <ul>
-    {% for item in ta_applied_tags %}
-    <li>{{item}}</li>
-    {% endfor %}
-  </ul>
+    {{ta_in}}
     {% else %}
     Ooops! Something with ta went wrong!
     {% endif %}
