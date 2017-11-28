@@ -26,3 +26,6 @@ Create file `text_to_speech`. Add the username to the first line and the passwor
 __Insert api key procuring instructions__  
 Create file `tone_analyzer`. Add the username to the first line and the password to the second line.
 
+### Cleverbot API
+__Insert api key procuring instructions__  
+Create file `cleverbot`. Add the username to the first line and the password to the second line.
