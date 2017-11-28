@@ -4,7 +4,7 @@ Far better than an ineffective potato
 ## Overview
 APIs used: Cleverbot, IBM Watson text to speech, IBM Watson tone analyzer
 
-The user inputs what they want to say to Cleverbot, and Cleverbot will return a response to what the user wrote. Cleverbot’s response will then be passed into the Watson text-to-speech API, ultimately allowing the user to download an audio file of Cleverbot’s response in spoken format.
+The user inputs what they want to say to Cleverbot, and Cleverbot will return a response to what the user wrote. Cleverbot’s response will then be passed into the Watson text-to-speech API, ultimately allowing the user to download an audio file of Cleverbot’s response in spoken format, as well as see the response's emotion/tone breakdown data.
 
 
 ## Dependencies
