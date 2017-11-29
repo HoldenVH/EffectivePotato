@@ -29,23 +29,40 @@ Then do the following to procure API keys
 
 ### Text to Speech API & Tone Analyzer API
 Text to Speech and Tone Analyzer are both IBM Watson APIs
+
 Credentials for Watson are availible at https://console.bluemix.net/developer/watson/services
+
 -to get started select "Text to Speech" and "Tone Analyzer"
+
 -click "Add Services"
+
 -either log in or create an account for IBM cloud
+
 -verify your email address
+
 -go back to https://console.bluemix.net/developer/watson/existing-services
+
 -under "Projects" select your projects
+
 -where it says "Credentials" click "Show"
+
 -Create file `text_to_speech`. Add the username to the first line and the password to the second line.
+
 -Create file `tone_analyzer`. Add the username to the first line and the password to the second line.
 
 ### Cleverbot API
 Cleverbot credentials are availible at https://www.cleverbot.com/api/
+
 -to get started, go to "Prices and sign up", and choose the free trial
+
 -add the item to your cart
+
 -you will be prompted to create an account
+
 -enter your information and click  "Place order"
+
 -go to the email account you gave and verify your email
+
 -you will now be able to go back to the cleverbot page and find your credentials under "My account"
+
 -Create file `cleverbot`. Add the API key to the first line.
