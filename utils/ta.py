@@ -17,18 +17,35 @@ def analyze_tone(text, username, password):
 
 def tagify_data(in_text, emotions):
     text = ""
+    applied = []
     text += "<speak>"
     if "joy" in emotions:
         text += '<express-as type="GoodNews">'
+        applied.append("joy")
+    if "extraversion" in emotions:
+        text += '<voice-transformation type="Custom" glottal_tension="+80%">'
+        applied.append("extraversion")
+    if "sadness" in emotions:
+        text += '<express-as type="Apology">'
+        applied.append("apology")
+    if "tentative" in emotions:
+        text += '<express-as type="Uncertainty">'
+        applied.append("uncertainty")
 
     text += in_text
 
+    if "tentative" in emotions:
+        text += "</express-as>"
+    if "sadness" in emotions:
+        text += "</express-as>"
+    if "extraversion" in emotions:
+        text += '</voice-transformation>'
     if "joy" in emotions:
         text += "</express-as>"
 
     text += "</speak>"
     print "TEXT: ", text
-    return text
+    return [text, applied]
 
 # 0: emotion_tone
 #        0: Anger
