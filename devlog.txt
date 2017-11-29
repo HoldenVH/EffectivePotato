@@ -68,3 +68,6 @@ Stylistic changes to test template.
 
 arifR 2017-11-27 13:11
 Work on text to speech expressiveness
+
+holdenH 2017-11-28 23:22
+For the PM gives wisdom of API keys; from his mouth come knowledge and understanding.
