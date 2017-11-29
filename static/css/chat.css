@@ -1,6 +1,9 @@
 .mytext{
     border:0;padding:10px;background:whitesmoke;
 }
+.mytext::placeholder {
+    color: gray;
+}
 
 body{
     background: url(../img/bg-pattern.png),#7b4397;

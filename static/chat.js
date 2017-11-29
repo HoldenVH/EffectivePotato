@@ -6,6 +6,8 @@ me.avatar = "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon
 var you = {};
 you.avatar = "http://www.cleverbot.com/images/cleverbot226x94.jpg";
 
+var lastClever = "";
+
 function formatAMPM(date) {
     var hours = date.getHours();
     var minutes = date.getMinutes();
@@ -47,6 +49,9 @@ insertChat("you", "LOL", 12000);*/
 //-- NOTE: No use time on insertChat.
 $( document ).ready(function() {
     //All jquery has to be here because flask is special
+    $("#pclick").click(function() {
+        cprompt();
+    });
     $(".mytext").on("keyup", function(e){
         if (e.which == 13){
             var text = $(this).val();
@@ -54,14 +59,14 @@ $( document ).ready(function() {
                 insertChat("me", text);
                 //console.log(text);
                 $(this).val('');
-                var ret = cleverbot(text);
+                var ret = cleverbot(text, "cleverbot");
                 console.log(ret);
                 //insertChat("cleverbot", ret, 100); //You can change cleverbot's delay with this.
             }
         }
 
     });
-    function cleverbot(i) {
+    function cleverbot(i, user) {
         var aj = $.ajax({
             type: "POST",
             url: "/clever",
@@ -72,12 +77,10 @@ $( document ).ready(function() {
             },
             success: function(result) {
                 console.log(result);
-                //insertChat("me", aj.responseText,0);
-                insertChat("cleverbot", result, 0);
+                lastClever = result;
+                insertChat(user, result, 0);
             }
         });
-        console.log("done");
-        //insertChat("cleverbot", aj.responseText, 100);
         return aj.responseText;
     }
 
@@ -120,5 +123,11 @@ $( document ).ready(function() {
         //console.log('yay?');
             }, time);
         //console.log("something is ending");
+    }
+    //When it does the message for you
+    function cprompt() {
+        console.log(lastClever);
+        cleverbot(lastClever, "me");
+        cleverbot(lastClever, "cleverbot");
     }
 });

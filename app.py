@@ -32,9 +32,13 @@ def test():
     creds['ta'] = read_credentials("tone_analyzer")
 
     # Check if creds exist
-    for cred in creds:
-        if creds[cred][0] == -1:
-            return render_template("bad_cred.html", api="Text to speech")
+    if creds['ta'][0] == -1:
+        return render_template("bad_cred.html", api="Tone analyzer", fname="tone_analyzer")
+    if creds['tts'][0] == -1:
+        return render_template("bad_cred.html", api="Text to speech", fname="text_to_speech")
+    #for cred in creds:
+    #    if creds[cred][0] == -1:
+    #
     # ========End reading credentials========
 
     # ========Tone analyzing========
@@ -63,6 +67,8 @@ def clever():
     global csstorage
     inp = request.form['input']
     cred = read_credentials('cleverbot')[0]
+    if cred == -1:
+        return render_template("bad_cred.html", api="cleverbot", fname="cleverbot")
     #cs = "needs to be implemented"
     if request.method == "GET":
         return cred
