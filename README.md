@@ -23,7 +23,7 @@ In the root of the EffectivePotato repo run:
 $ git clone git@github.com:ArifRoktim/credentials.git
 ```
 
-###For non-members of Team EffectivePotato
+### For non-members of Team EffectivePotato
 In the root of the EffectivePotato repo create a file named "credentials"
 Then do the following to procure API keys
 
