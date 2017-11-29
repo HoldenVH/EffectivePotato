@@ -57,11 +57,8 @@ $( document ).ready(function() {
             var text = $(this).val();
             if (text !== ""){
                 insertChat("me", text);
-                //console.log(text);
                 $(this).val('');
                 var ret = cleverbot(text, "cleverbot");
-                console.log(ret);
-                //insertChat("cleverbot", ret, 100); //You can change cleverbot's delay with this.
             }
         }
 
@@ -73,10 +70,8 @@ $( document ).ready(function() {
             async: true,
             data: { input: i },
             beforeSend: function() {
-                console.log('before');
             },
             success: function(result) {
-                console.log(result);
                 lastClever = result;
                 insertChat(user, result, 0);
             }
@@ -92,7 +87,6 @@ $( document ).ready(function() {
         var date = formatAMPM(new Date());
 
         if (who == "me"){
-            //console.log("something is starting");
             control = '<li style="width:100%">' +
             '<div class="msj macro">' +
             '<div class="avatar"><img class="img-circle" style="width:100%;" src="'+ me.avatar +'" /></div>' +
@@ -112,21 +106,15 @@ $( document ).ready(function() {
             '<div class="avatar" style="padding:0px 0px 0px 10px !important"><img class="img-circle" style="width:100%;" src="'+you.avatar+'" /></div>' +
             '</li>';
         }
-        //console.log('something is continuing');
         setTimeout(
             function(){
-        //console.log(control);
         $("ul").append(control);
         var element = document.getElementById("ulid");
         element.scrollTop = element.scrollHeight;
-        //document.
-        //console.log('yay?');
             }, time);
-        //console.log("something is ending");
     }
     //When it does the message for you
     function cprompt() {
-        console.log(lastClever);
         cleverbot(lastClever, "me");
         cleverbot(lastClever, "cleverbot");
     }
